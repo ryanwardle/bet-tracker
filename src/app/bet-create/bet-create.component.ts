@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-export interface Bet {
+export interface BetType {
   value: string;
   viewValue: string;
 }
@@ -17,7 +17,7 @@ export interface Sport {
 })
 
 export class BetCreateComponent {
-   bets: Bet[] = [
+   betTypes: BetType[] = [
      {value: 'straight', viewValue: 'Straight'},
      {value: 'parlay', viewValue: 'Parlay'}
    ];

@@ -14,8 +14,8 @@
       <mat-label>Select Bet Type</mat-label>
       <mat-select>
         <!-- WILL NEED TO ADD MORE OPTIONS IF I WANT TO ADD HORSERACING -->
-        <mat-option *ngFor="let bet of bets" [value]="bet.value" required>
-          {{ bet.viewValue }}
+        <mat-option *ngFor="let betType of betTypes" [value]="betType.value" required>
+          {{ betType.viewValue }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -38,6 +38,7 @@
     <button mat-raised-button color="primary" type="submit">Submit</button>
   </form>
 </mat-card>
+
 
 
 

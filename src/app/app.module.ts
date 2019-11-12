@@ -9,12 +9,15 @@ import { BetCreateComponent } from './bet-create/bet-create.component';
 import { MatCardModule,
          MatInputModule,
          MatSelectModule,
-         MatButtonModule} from '@angular/material';
+         MatButtonModule,
+         MatToolbarModule} from '@angular/material';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BetCreateComponent
+    BetCreateComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { MatCardModule,
     MatButtonModule,
     MatCardModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
