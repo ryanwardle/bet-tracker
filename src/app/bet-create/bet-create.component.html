@@ -1,16 +1,44 @@
 <mat-card>
   <form>
-      <mat-form-field>
-          <input matInput type="text" placeholder="Bet Amount">
-        </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Bet Amount" required>
+    </mat-form-field>
+
     <mat-form-field>
       <!-- MAY CHANGE TO NUMBER, NEED TO FIND OUT IF INPUTS OF  +230 OR -380 WOULD BE VALID -->
-      <input matInput type="text" placeholder="Bet Odds">
+      <input matInput type="text" placeholder="Bet Odds" required>
     </mat-form-field>
 
     <!-- NEED BET TYPES AND SPORTS -->
+    <mat-form-field>
+      <mat-label>Select Bet Type</mat-label>
+      <mat-select>
+        <!-- WILL NEED TO ADD MORE OPTIONS IF I WANT TO ADD HORSERACING -->
+        <mat-option *ngFor="let bet of bets" [value]="bet.value" required>
+          {{ bet.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Select Sport</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let sport of sports" [value]="sport.value" required>
+          {{ sport.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Notes" cols="30" rows="10"></textarea>
+    </mat-form-field>
+
+    <!-- NEED TO ADD TWO-WAY DATA BINDING TO CALCULATE TOTAL WIN OR LOSS ON BET -->
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
   </form>
 </mat-card>
+
 
 
 

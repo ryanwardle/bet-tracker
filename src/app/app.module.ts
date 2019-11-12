@@ -7,7 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BetCreateComponent } from './bet-create/bet-create.component';
 
 import { MatCardModule,
-         MatInputModule } from '@angular/material';
+         MatInputModule,
+         MatSelectModule,
+         MatButtonModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,10 @@ import { MatCardModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatButtonModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
