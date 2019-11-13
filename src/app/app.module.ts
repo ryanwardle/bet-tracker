@@ -10,13 +10,17 @@ import { MatCardModule,
          MatInputModule,
          MatSelectModule,
          MatButtonModule,
-         MatToolbarModule} from '@angular/material';
+         MatToolbarModule,
+         MatRadioModule} from '@angular/material';
+
 import { HeaderComponent } from './header/header.component';
+import { BetListComponent } from './bet-list/bet-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BetCreateComponent,
+    BetListComponent,
     HeaderComponent
   ],
   imports: [
@@ -26,6 +30,7 @@ import { HeaderComponent } from './header/header.component';
     MatButtonModule,
     MatCardModule,
     MatInputModule,
+    MatRadioModule,
     MatSelectModule,
     MatToolbarModule
   ],

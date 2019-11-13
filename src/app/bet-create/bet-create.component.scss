@@ -12,4 +12,12 @@ mat-card{
       margin: 3rem auto 0;
     }
   }
+
+  mat-radio-button{
+    margin: 2rem 0;
+
+    &:last-of-type{
+      margin-left: 1.5rem;
+    }
+  }
 }
