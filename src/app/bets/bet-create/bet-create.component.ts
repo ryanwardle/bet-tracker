@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { BetService } from '../bet.service';
 
 // INTERFACES FOR FORM OPTIONS
 export interface BetType {
@@ -18,7 +19,7 @@ export interface Sport {
   styleUrls: ['./bet-create.component.scss']
 })
 
-export class BetCreateComponent implements OnInit{
+export class BetCreateComponent implements OnInit {
 
   // FORM OPTIONS FOR BETTYPES AND SPORTS
    betTypes: BetType[] = [
@@ -36,6 +37,8 @@ export class BetCreateComponent implements OnInit{
    ];
 
    form: FormGroup;
+
+   constructor(private betService: BetService) {}
 
    ngOnInit() {
     this.form = new FormGroup({
@@ -59,6 +62,7 @@ export class BetCreateComponent implements OnInit{
       notes: new FormControl(this.form.controls.notes.value)
     });
     console.log(this.form.value);
+    this.betService.addBet(this.form.value);
     this.form.reset();
    }
 }

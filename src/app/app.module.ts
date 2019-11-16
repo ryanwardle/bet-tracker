@@ -11,7 +11,8 @@ import { MatCardModule,
          MatSelectModule,
          MatButtonModule,
          MatToolbarModule,
-         MatRadioModule} from '@angular/material';
+         MatRadioModule,
+         MatTableModule} from '@angular/material';
 
 import { BetCreateComponent } from './bets/bet-create/bet-create.component';
 import { HeaderComponent } from './header/header.component';
@@ -36,6 +37,7 @@ import { LoginComponent } from './login/login.component';
     MatInputModule,
     MatRadioModule,
     MatSelectModule,
+    MatTableModule,
     MatToolbarModule
   ],
   providers: [],

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Bet } from '../bet.model';
 import { BetService } from '../bet.service';
+import { MatTableDataSource, MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-bet-list',
@@ -11,12 +12,17 @@ import { BetService } from '../bet.service';
 export class BetListComponent implements OnInit {
 
   bets: Bet[] = [];
+  dataSource;
+  displayedColumns: string[] = ['amount', 'odds', 'type', 'sport', 'result', 'notes'];
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private betService: BetService) {}
 
   ngOnInit() {
     this.bets = this.betService.getBets();
     console.log(this.bets);
+    this.dataSource = new MatTableDataSource(this.bets);
+    this.dataSource.sort = this.sort;
   }
 
 }

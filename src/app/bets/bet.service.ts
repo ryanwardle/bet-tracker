@@ -3,7 +3,7 @@ import { Bet } from './bet.model';
 
 @Injectable({providedIn: 'root'})
 export class BetService {
-  private bets: Bet[];
+  private bets: Bet[] = [];
 
   getBets() {
     return this.bets;
