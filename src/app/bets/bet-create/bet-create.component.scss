@@ -16,7 +16,7 @@ mat-card{
   mat-radio-button{
     margin: 2rem 0;
 
-    &:last-of-type{
+    &:not(:first-of-type){
       margin-left: 1.5rem;
     }
   }

@@ -13,14 +13,13 @@ export class BetListComponent implements OnInit {
 
   bets: Bet[] = [];
   dataSource;
-  displayedColumns: string[] = ['amount', 'odds', 'type', 'sport', 'result', 'notes'];
+  displayedColumns: string[] = ['amount', 'odds', 'type', 'sport', 'result', 'notes', 'total'];
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private betService: BetService) {}
 
   ngOnInit() {
     this.bets = this.betService.getBets();
-    console.log(this.bets);
     this.dataSource = new MatTableDataSource(this.bets);
     this.dataSource.sort = this.sort;
   }

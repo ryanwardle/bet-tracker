@@ -1,12 +1,12 @@
 <mat-card>
   <form [formGroup]="form" (submit)="onSubmitBet()">
     <mat-form-field>
-      <input matInput formControlName="amount" name="amount" type="text" placeholder="Bet Amount" required>
+      <input [(ngModel)]="betAmount" matInput formControlName="amount" name="amount" type="text" placeholder="Bet Amount" required>
     </mat-form-field>
 
     <mat-form-field>
       <!-- MAY CHANGE TO NUMBER, NEED TO FIND OUT IF INPUTS OF  +230 OR -380 WOULD BE VALID -->
-      <input matInput formControlName="odds" name="odds" type="text" placeholder="Bet Odds" required>
+      <input [(ngModel)]="oddsAmount" matInput formControlName="odds" name="odds" type="text" placeholder="Bet Odds" required>
     </mat-form-field>
 
     <!-- NEED BET TYPES AND SPORTS -->
@@ -29,16 +29,28 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-radio-group formControlName="result" name="result" >
+    <mat-radio-group [(ngModel)]="result" formControlName="result" name="result" >
       <mat-radio-button value="win">Win</mat-radio-button>
       <mat-radio-button value="loss">Loss</mat-radio-button>
+      <mat-radio-button value="push">Push</mat-radio-button>
     </mat-radio-group>
 
     <mat-form-field>
       <textarea formControlName="notes" name="notes" matInput placeholder="Notes" cols="30" rows="5"></textarea>
     </mat-form-field>
 
-    <!-- NEED TO ADD TWO-WAY DATA BINDING TO CALCULATE TOTAL WIN OR LOSS ON BET -->
+    <!-- <mat-form-field *ngIf="betAmount && oddsAmount && result">
+      <input
+             matInput
+             formControlName="total"
+             name="total" type="text"
+             [value]="calculateAmount(betAmount, oddsAmount, result)">
+    </mat-form-field> -->
+    <!-- <ng-template #calculatedAmount *ngIf="betAmount && oddsAmount && result">
+        <p>{{ calculateAmount(betAmount, oddsAmount, result) }}</p>
+    </ng-template> -->
+
+    <p *ngIf="betAmount && oddsAmount && result" >{{ calculateAmount(betAmount, oddsAmount, result) }}</p>
 
     <button mat-raised-button color="primary" type="submit">Submit</button>
   </form>

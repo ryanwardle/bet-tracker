@@ -9,5 +9,6 @@ export interface Bet {
   sport: string;
   result: string;
   notes: string;
+  total: number;
 }
 

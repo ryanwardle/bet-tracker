@@ -12,7 +12,8 @@ import { MatCardModule,
          MatButtonModule,
          MatToolbarModule,
          MatRadioModule,
-         MatTableModule} from '@angular/material';
+         MatTableModule,
+         MatSortModule} from '@angular/material';
 
 import { BetCreateComponent } from './bets/bet-create/bet-create.component';
 import { HeaderComponent } from './header/header.component';
@@ -38,7 +39,8 @@ import { LoginComponent } from './login/login.component';
     MatRadioModule,
     MatSelectModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
